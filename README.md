@@ -1,7 +1,6 @@
 # docker-template-vscode
 
-
-> ワークショップ用
+> ワークショップにおいてDevContainerを作成するために用います
 
 ---
 ^C
