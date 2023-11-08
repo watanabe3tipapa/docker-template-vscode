@@ -1,0 +1,42 @@
+{
+    "name": "rust-ubuntu",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "init": true,
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "files.watcherExclude": {
+                    "**/target/**": true
+                },
+                "[rust]": {
+                    "editor.formatOnSave": true
+                },
+                "rust-analyzer.checkOnSave": true,
+                "rust-analyzer.check.command": "clippy"
+            },
+            "extensions": [
+                "vadimcn.vscode-lldb",
+                "rust-lang.rust-analyzer",
+                "tamasfe.even-better-toml",
+                "serayuzgur.crates"
+            ]
+        }
+    },
+    "remoteUser": "vscode",
+    "features": {
+        "ghcr.io/devcontainers/features/git:latest": {
+            "version": "latest",
+            "ppa": true
+        }
+    },
+    "runArgs": [
+        "--cap-add=SYS_PTRACE",
+        "--security-opt",
+        "seccomp=unconfined"
+    ],
+    "forwardPorts": [
+        // 8080
+    ]
+}
